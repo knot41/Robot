@@ -14,6 +14,7 @@ for i in range(1,num_labels):
         img[:, :, 1][mask] = 255
         img[:, :, 2][mask] = 255
 img = cv.morphologyEx(img,cv.MORPH_OPEN,kernel)
+
 cv.imshow('origin',img0)
 cv.imshow('now',img)
 cv.waitKey(0)
