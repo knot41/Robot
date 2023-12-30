@@ -10,7 +10,7 @@ num_labels,labels,stats,centroids = cv.connectedComponentsWithStats(img3,connect
 print(num_labels)
 print(stats)
 for i in range(0,num_labels):
-    if stats[i][0] !=0:
+    if stats[i][0] != 0:
         x = stats[i][0]
         y = stats[i][1]
         w = stats[i][2]
