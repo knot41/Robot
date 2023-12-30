@@ -7,8 +7,6 @@ img1 = cv.morphologyEx(img,cv.MORPH_OPEN,kernel)
 img2 = cv.cvtColor(img1,cv.COLOR_BGR2GRAY)
 retval,img3 = cv.threshold(img2,150,255,cv.THRESH_BINARY)
 num_labels,labels,stats,centroids = cv.connectedComponentsWithStats(img3,connectivity=8,ltype=None)
-print(num_labels)
-print(stats)
 for i in range(0,num_labels):
     if stats[i][0] != 0:
         x = stats[i][0]
