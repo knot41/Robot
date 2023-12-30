@@ -16,6 +16,7 @@ for i in range(0,num_labels):
         w = stats[i][2]
         h = stats[i][3]
         cv.rectangle(img,(x,y),(x+w,y+h),(0,0,255),3)
+
 cv.imshow('origin',img0)
 cv.imshow('now',img)
 cv.waitKey(0)
