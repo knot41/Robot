@@ -8,7 +8,7 @@ retval,img2 = cv.threshold(img1,0,255,cv.THRESH_BINARY_INV | cv.THRESH_OTSU)
 num_labels, labels ,stats , centroids = cv.connectedComponentsWithStats(img2, connectivity=8, ltype=None)
 for i in range(1,num_labels):
     mask = labels == i
-    if stats[i-1][2]-10<stats[i-1][3]<stats[i-1][2]+10 and stats[i-1][4]<20:
+    if stats[i-1][2]-10 < stats[i-1][3] < stats[i-1][2]+10 and stats[i-1][4] < 20:
         img[:, :, 0][mask] = 0
         img[:, :, 1][mask] = 255
         img[:, :, 2][mask] = 255
