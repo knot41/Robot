@@ -1,6 +1,7 @@
 import cv2 as cv
 
 img = cv.imread("f1.jpg")
+img0 = cv.imread("f1.jpg")
 kernel = cv.getStructuringElement(cv.MORPH_RECT,(5,5))
 img = cv.morphologyEx(img,cv.MORPH_OPEN,kernel)
 img1 = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
@@ -13,6 +14,7 @@ for i in range(1,num_labels):
         img[:, :, 1][mask] = 255
         img[:, :, 2][mask] = 255
 img = cv.morphologyEx(img,cv.MORPH_OPEN,kernel)
-cv.imshow('img',img)
+cv.imshow('origin',img0)
+cv.imshow('now',img)
 cv.waitKey(0)
 cv.destroyAllWindows()
